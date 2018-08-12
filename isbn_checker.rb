@@ -1,6 +1,6 @@
 
 
-def isbn10_ready(isbn)
+def isbn_ready(isbn)
 	""
 	isbn2 = isbn.gsub(/[^0-9xX]/,'').gsub(/x/,'X')
 	if isbn2.include? "X" 
@@ -12,12 +12,13 @@ def isbn10_ready(isbn)
 	else
 		isbn2
 	end
-	if isbn2.length != 10
-		nil
-	else 
-		isbn2
-	end
 end
+# 	if isbn2.length != 10
+# 		nil
+# 	else 
+# 		isbn2
+# 	end
+# end
 
 
 
