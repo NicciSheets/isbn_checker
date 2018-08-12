@@ -90,7 +90,7 @@ def isbn13_validation(isbn)
 	end
 end
 
-def which_one(isbn)
+def which_one(isbn) #main function to run through either the isbn10 or the isbn 13 checker criteria
 	if isbn10_validation(isbn) == "Valid ISBN10"
 		"Valid ISBN10"
 	else 
