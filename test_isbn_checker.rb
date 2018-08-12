@@ -40,14 +40,19 @@ class TestIsbnChecker < Minitest::Test
 	# 	assert_nil(nil, isbn10_ready(isbn))
 	# end
 
-	# def test_assert_removes_chars_except_valid_numbers_for_isbn13
-	# 	isbn = "9780470059029"
-	# 	assert_equal("9780470059029", isbn_ready(isbn))
-	# 	isbn = "978-0-13-149505-0"
-	# 	assert_equal("9780131495050", isbn_ready(isbn))
-	# 	isbn = "978 0 471 48648 0"
-	# 	assert_
+	def test_assert_removes_chars_except_valid_numbers_for_isbn13
+		isbn = "9780470059029"
+		assert_equal("9780470059029", isbn_ready(isbn))
+		isbn = "978-0-13-149505-0"
+		assert_equal("9780131495050", isbn_ready(isbn))
+		isbn = "978 0 471 48648 0"
+		assert_equal("9780471486480", isbn_ready(isbn))
+		isbn = "97804x71486480"
+		assert_nil(nil, isbn_ready(isbn))
+		isbn = "978047005902x"
+		assert_nil(nil, isbn_ready(isbn))
+	end
 
-	# end
+	
 
 end
