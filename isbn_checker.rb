@@ -64,6 +64,28 @@ def isbn13_ready(isbn)
 	end
 end
 
+def isbn13_checksum(isbn)
+	isbn2 = isbn13_ready(isbn)
+	if isbn2 == "Invalid ISBN"
+		"Invalid ISBN"
+	else
+		checksum_arr = []
+		isbn2.chop.each_char.with_index do |num, index|
+			if index % 2 == 0
+				checksum_arr  << (num.to_i * 1)
+			else
+				checksum_arr << (num.to_i * 3)
+			end
+		end
+		(10 - (checksum_arr.reduce(:+)) % 10) % 10
+	end 
+end
+
+# def isbn13_checksum2(isbn)
+# 	checksum = isbn13_checksum(isbn)
+# 	checksum 
+# 	checksum % 10
+# end
 #isbn = "0471958697"
 #isbn = "0-321-14653-0"
 #isbn = "877195869x"
@@ -78,4 +100,8 @@ end
 
 #isbn = "978047005902x"
 #isbn = "97804x7148648"
+#isbn = "9780470059029"
+isbn = "978-0-13-149505-0"
+
 #p isbn.gsub(/[^0-9]/,'')
+p isbn13_checksum(isbn)
