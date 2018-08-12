@@ -20,7 +20,9 @@ end
 # 	end
 # end
 
+# def isbn10_checksum(isbn)
 
+# end
 
 
 

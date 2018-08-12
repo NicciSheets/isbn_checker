@@ -14,7 +14,7 @@ class TestIsbnChecker < Minitest::Test
 		assert_nil(nil, isbn_ready(isbn))
 	end
 
-	def test_assert_it_is_a_string
+	def test_assert_returns_string_class
 		isbn = "0471958697"
 		assert_equal(String, isbn_ready(isbn).class)
 		isbn = "0-321-14653-0"
@@ -53,6 +53,13 @@ class TestIsbnChecker < Minitest::Test
 		assert_nil(nil, isbn_ready(isbn))
 	end
 
-	
+	def test_assert_returns_string_class
+		isbn = "9780470059029"
+		assert_equal(String, isbn_ready(isbn).class)
+		isbn = "978-0-13-149505-0"
+		assert_equal(String, isbn_ready(isbn).class)
+		isbn = "978 0 471 48648 0"
+		assert_equal(String, isbn_ready(isbn).class)
+	end
 
 end
