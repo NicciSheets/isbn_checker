@@ -1,15 +1,15 @@
 def isbn10_ready(isbn)
 	""
-	# isbn2 = isbn.gsub(/[^0-9xX]/,'').gsub(/x/,'X')
-	# if isbn2.include? "X" 
-	# 	if true && isbn2[-1] == "X"
-	# 		isbn2
-	# 	else 
-	# 		nil
-	# 	end
-	# else
-	# 	isbn2
-	# end
+	isbn2 = isbn.gsub(/[^0-9xX]/,'').gsub(/x/,'X')
+	if isbn2.include? "X" 
+		if true && isbn2[-1] == "X"
+			isbn2
+		else 
+			nil
+		end
+	else
+		isbn2
+	end
 end
 
 
