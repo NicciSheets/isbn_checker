@@ -62,7 +62,6 @@ class TestIsbnChecker < Minitest::Test
 		assert_equal(String, isbn_ready(isbn).class)
 	end
 
-
 	def test_assert_returns_checksum_isbn10
 		isbn = "0471958697"
 		assert_equal(7, isbn10_checksum(isbn))
@@ -71,4 +70,16 @@ class TestIsbnChecker < Minitest::Test
 		isbn = "877195869x"
 		assert_equal(10, isbn10_checksum(isbn))
 	end
+
+	def test_assert_valid_or_invalid_isbn10
+		isbn = "0471958697"
+		assert_equal("Valid ISBN10", isbn10_validation(isbn))
+		isbn = "0-321-14653-0"
+		assert_equal("Valid ISBN10", isbn10_validation(isbn))
+		isbn = "877195869x"
+		assert_equal("Valid ISBN10", isbn10_validation(isbn))	
+		isbn = "877195x869"
+		assert_equal("Invalid ISBN", isbn10_validation(isbn))		
+	end	
+
 end
