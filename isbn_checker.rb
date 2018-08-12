@@ -36,11 +36,13 @@ def isbn10_checksum(isbn)
 end
 
 def isbn10_validation(isbn)
-	isbn10_checker = isbn10_checksum(isbn)
+	isbn10_checker = isbn10_checksum(isbn).to_s
 	if isbn10_checker == "Invalid ISBN"
 		"Invalid ISBN"
 	else
-		if isbn10_checker == 10 && isbn[-1] == "X" || "x"
+		if isbn10_checker == "10" && isbn[-1] == "X" 
+			"Valid ISBN10"
+		elsif isbn10_checker == "10" && isbn[-1] == "x"
 			"Valid ISBN10"
 		elsif isbn10_checker == isbn[-1]
 			"Valid ISBN10"
@@ -106,10 +108,9 @@ end
 	
 
 
-
 #isbn = "0471958697"
 #isbn = "0-321-14653-0"
-#isbn = "877195869x"
+#isbn = "877195869X"
 #isbn = "877195x869"
 #isbn = "877195z869"
 
@@ -117,6 +118,7 @@ end
 
 #isbn_ready(isbn)
 #p isbn10_checksum(isbn)
+#p isbn[-1]
 #p isbn10_validation(isbn)
 
 #isbn = "978047005902x"
@@ -128,3 +130,4 @@ end
 #p isbn13_checksum(isbn)
 #p isbn[-1]
 #p isbn13_validation(isbn)
+#p which_one(isbn)
