@@ -90,6 +90,22 @@ def isbn13_validation(isbn)
 	end
 end
 
+def which_one(isbn)
+	if isbn10_validation(isbn) == "Valid ISBN10"
+		"Valid ISBN10"
+	else 
+		if isbn13_validation(isbn) == "Valid ISBN13"
+			"Valid ISBN13"
+		else
+			"Invalid ISBN"
+		end
+	end
+end
+
+
+	
+
+
 
 #isbn = "0471958697"
 #isbn = "0-321-14653-0"
