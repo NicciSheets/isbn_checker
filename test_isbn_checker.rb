@@ -78,4 +78,18 @@ class TestIsbnChecker < Minitest::Test
 		assert_equal("Invalid ISBN", isbn13_checksum(isbn))
 	end
 
+	def test_assert_valid_or_invalid_isbn13
+		isbn = "9780470059029"
+		assert_equal("Valid ISBN13", isbn13_validation(isbn))
+		isbn = "978-0-13-149505-0"
+		assert_equal("Valid ISBN13", isbn13_validation(isbn))
+		isbn = "978 0 471 48648 0"
+		assert_equal("Valid ISBN13", isbn13_validation(isbn))
+		isbn = "97804x7148648"		
+		assert_equal("Invalid ISBN", isbn13_validation(isbn))
+		isbn = "9780470059022"
+		assert_equal("Invalid ISBN", isbn13_validation(isbn))
+		isbn = "97804a0059029"
+		assert_equal("Invalid ISBN", isbn13_validation(isbn))
+	end
 end

@@ -18,8 +18,6 @@ def isbn10_ready(isbn)
 	end
 end
 
-
-
 def isbn10_checksum(isbn)
 	isbn2 = isbn10_ready(isbn)
 	if isbn2 == "Invalid ISBN"
@@ -37,7 +35,6 @@ def isbn10_checksum(isbn)
 	end
 end
 
-
 def isbn10_validation(isbn)
 	isbn10_checker = isbn10_checksum(isbn)
 	if isbn10_checker == "Invalid ISBN"
@@ -52,7 +49,6 @@ def isbn10_validation(isbn)
 		end
 	end
 end
-
 
 def isbn13_ready(isbn)
 	""
@@ -81,11 +77,20 @@ def isbn13_checksum(isbn)
 	end 
 end
 
-# def isbn13_checksum2(isbn)
-# 	checksum = isbn13_checksum(isbn)
-# 	checksum 
-# 	checksum % 10
-# end
+def isbn13_validation(isbn)
+	isbn13_checker = isbn13_checksum(isbn)
+	if isbn13_checker == "Invalid ISBN"
+		"Invalid ISBN"
+	else
+		if isbn13_checker.to_s == isbn[-1]
+			"Valid ISBN13"
+		else
+			"Invalid ISBN"
+		end
+	end
+end
+
+
 #isbn = "0471958697"
 #isbn = "0-321-14653-0"
 #isbn = "877195869x"
@@ -101,7 +106,9 @@ end
 #isbn = "978047005902x"
 #isbn = "97804x7148648"
 #isbn = "9780470059029"
-isbn = "978-0-13-149505-0"
+#isbn = "978-0-13-149505-0"
 
 #p isbn.gsub(/[^0-9]/,'')
-p isbn13_checksum(isbn)
+#p isbn13_checksum(isbn)
+#p isbn[-1]
+#p isbn13_validation(isbn)
