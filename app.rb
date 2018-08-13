@@ -3,6 +3,7 @@ require_relative 'isbn_checker.rb'
 enable :sessions
 
 get '/' do
+	puts params
 	validity = validity 
 	erb :checker, locals:{validity: validity}
 end
