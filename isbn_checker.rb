@@ -1,6 +1,5 @@
 def isbn10_ready(isbn)
 	""
-
 	isbn2 = isbn.gsub(/[^0-9xX]/,'').gsub(/x/,'X')
 	if isbn2.length != 10
 		"Invalid ISBN"
@@ -105,13 +104,13 @@ def which_one(isbn) #main function to run through either the isbn10 or the isbn 
 	end
 end
 
-def isbn_hash(isbn)
-	validity = which_one(isbn)
-	isbn_hash = {}
-	isbn_hash["ISBN"] = "#{isbn}"
-	isbn_hash["Validity"] = "#{validity}"
-	isbn_hash
-end
+# def isbn_hash(isbn)
+# 	validity = which_one(isbn)
+# 	isbn_hash = {}
+# 	isbn_hash["ISBN"] = "#{isbn}"
+# 	isbn_hash["Validity"] = "#{validity}"
+# 	isbn_hash
+# end
 	
 
 
