@@ -1,5 +1,6 @@
 def isbn10_ready(isbn)
 	""
+
 	isbn2 = isbn.gsub(/[^0-9xX]/,'').gsub(/x/,'X')
 	if isbn2.length != 10
 		"Invalid ISBN"

@@ -2,13 +2,19 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<style>
+.form-row label.placeholder,
+        .form-row label.active {
+            transform: translateY(-140%);
+            font-size: 0.8em;
+        }
+
+</style>
 <body>
 <form method="post" action="isbn_checker">
 
-<div class = input_content">
-    <input type="text" name="isbn" required autofocus>
-</div>
-<div class="button">
+<textarea rows="6" name="isbn" placeholder="Enter One Value Per Line To Evaluate Validity" style="width:25%"></textarea>
+<br><div class="button">
    <button type="submit" value="Submit">Submit</button>
 </div>
 <div class="valid_or_not">
@@ -23,3 +29,4 @@
 
 
 
+ <!-- <input type="text" name="isbn" required autofocus><br> -->
