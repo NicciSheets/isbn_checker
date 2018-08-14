@@ -104,16 +104,6 @@ def which_one(isbn) #main function to run through either the isbn10 or the isbn 
 	end
 end
 
-# def isbn_hash(isbn)
-# 	validity = which_one(isbn)
-# 	isbn_hash = {}
-# 	isbn_hash["ISBN"] = "#{isbn}"
-# 	isbn_hash["Validity"] = "#{validity}"
-# 	isbn_hash
-# end
-	
-
-
 #isbn = "0471958697"
 #isbn = "0-321-14653-0"
 #isbn = "877195869X"

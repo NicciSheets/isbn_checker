@@ -117,29 +117,4 @@ class TestIsbnChecker < Minitest::Test
 		isbn = "877195a869"
 		assert_equal("Invalid ISBN", which_one(isbn))	
 	end
-
-	def test_assert_returns_validity_and_isbn_as_hash
-		isbn = "9780470059029"
-		assert_equal({"ISBN" => "9780470059029", "Validity" => "Valid ISBN13"}, isbn_hash(isbn))
-		isbn = "978-0-13-149505-0"
-		assert_equal({"ISBN" => "978-0-13-149505-0", "Validity" => "Valid ISBN13"}, isbn_hash(isbn))
-		isbn = "978 0 471 48648 0"
-		assert_equal({"ISBN" => "978 0 471 48648 0", "Validity" => "Valid ISBN13"}, isbn_hash(isbn))
-		isbn = "97804x7148648"		
-		assert_equal({"ISBN" => "97804x7148648", "Validity" => "Invalid ISBN"}, isbn_hash(isbn))
-		isbn = "9780470059022"
-		assert_equal({"ISBN" => "9780470059022", "Validity" => "Invalid ISBN"}, isbn_hash(isbn))
-		isbn = "97804a0059029"
-		assert_equal({"ISBN" => "97804a0059029", "Validity" => "Invalid ISBN"}, isbn_hash(isbn))
-		isbn = "0471958697"
-		assert_equal({"ISBN" => "0471958697", "Validity" => "Valid ISBN10"}, isbn_hash(isbn))
-		isbn = "0-321-14653-0"
-		assert_equal({"ISBN" => "0-321-14653-0", "Validity" => "Valid ISBN10"}, isbn_hash(isbn))
-		isbn = "877195869x"
-		assert_equal({"ISBN" => "877195869x", "Validity" => "Valid ISBN10"}, isbn_hash(isbn))	
-		isbn = "877195x869"
-		assert_equal({"ISBN" => "877195x869", "Validity" => "Invalid ISBN"}, isbn_hash(isbn))
-		isbn = "877195a869"
-		assert_equal({"ISBN" => "877195a869", "Validity" => "Invalid ISBN"}, isbn_hash(isbn))	
-	end
 end
