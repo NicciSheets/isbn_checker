@@ -116,5 +116,11 @@ class TestIsbnChecker < Minitest::Test
 		assert_equal("Invalid ISBN", which_one(isbn))
 		isbn = "877195a869"
 		assert_equal("Invalid ISBN", which_one(isbn))	
+		isbn = " "
+		assert_equal("Invalid ISBN", which_one(isbn))
+		isbn = "-"
+		assert_equal("Invalid ISBN", which_one(isbn))
+		isbn = ""
+		assert_equal("Invalid ISBN", which_one(isbn))
 	end
 end
