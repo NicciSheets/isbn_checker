@@ -18,12 +18,26 @@
    <button type="submit" value="Submit">Submit</button>
 </div>
 <div class="valid_or_not">
-	<%= final_answer %><br>
-    <%= isbn %><br>
+	
+	<div class="isbn_container">
+		
+		<% if big_array == nil %>
+			<%= "" %>
+		<% else %>
+		<table style="width: max-content;"">
+			<% big_array.each do |x| %>
+				<tr>
+					<td><%= x[0] %></td>
+					<td><%= x[1] %></td>
+				</tr>
+				<% end %>
+		</table>
+		<% end %> 
+		 
 
-   
-
-</div>
+ 	</div>
+	
+ </div>
 
 </form>
 </body>
