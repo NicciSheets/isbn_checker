@@ -18,7 +18,7 @@
 
 <br><div class="button">
    <button type="submit" value="Submit">Submit</button>
-</div>
+</div><br>
 
 <div class="valid_or_not">
 	<div class="isbn_container">
@@ -29,8 +29,7 @@
 
 			<% big_array.each do |x| %>
 				<tr>
-					<td style="text-align: center"><%= "#{x[0]}," %></td>
-					<td style="text-align: center"><%= x[1] %></td>
+					<td><%= x[0] %></td><td><%= x[1] %></td>
 				</tr>
 				<% end %>
 		</table>
