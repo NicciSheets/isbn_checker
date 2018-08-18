@@ -1,17 +1,3 @@
-body
-{
-  background-color: darkslategrey;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1.2rem;
-}
-
-table
-{
-  width: 8rem;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: left;
-}
 
 .btn {
   background-color: #4CAF50;
@@ -39,9 +25,10 @@ table
   width: 7rem;
 }
 
-.errormsg
-{
-  color: lightcoral;
-  font-weight: bolder;
-  font-size: 1.1rem;
+
+table#t01:nth-child(even) {
+    background-color: #eee;
+}
+table#t01:nth-child(odd) {
+   background-color: #fff;
 }
