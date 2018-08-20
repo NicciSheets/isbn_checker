@@ -6,7 +6,7 @@ require 'dotenv'
 require_relative 'isbn_checker_refactor.rb'
 enable :sessions
 
-# load 'local_ENV.rb' if File.exist?('local_ENV.rb')
+load 'local_ENV.rb' if File.exist?('local_ENV.rb')
 
 # s3 = AWS::S3.new(
 #  :access_key_id => AWS["AWS_ACCESS_KEY_ID"],
