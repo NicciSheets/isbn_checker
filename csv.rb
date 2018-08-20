@@ -33,12 +33,12 @@ def csv_validation(csv_data)
 end
 
 CSV.open("output_csv_isbn.csv", "wb") do |csv|
+	headers = csv_data.shift.map {|i| i.to_s }
+		csv << headers
 	csv_validation(csv_data).each do |m|
-		csv << m
+		csv << m 
 	end
 end 
 
-
-
-
+#headers = csv_data.shift.map {|i| i.to_s }
 # p csv_validation(csv_data)
