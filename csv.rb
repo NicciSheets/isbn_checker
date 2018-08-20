@@ -9,7 +9,7 @@ def csv_data_input(csv_data)
 	# p string_data.class
 	# p string_data.length
 	string_data.shift
-	 string_data
+	string_data
 	# p string_data[0][1]
 	# p string_data[1]
 	i = 0  # the index of the column you want to delete
@@ -39,7 +39,6 @@ CSV.open("output_csv_isbn.csv", "wb") do |csv|
 	csv_validation(csv_data).each do |m|
 		csv << m 
 	end
-
 end 
 
 #headers = csv_data.shift.map {|i| i.to_s }
