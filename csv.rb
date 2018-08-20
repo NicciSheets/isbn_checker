@@ -19,8 +19,8 @@ def csv_data_input(csv_data)
 end
 
 def csv_validation(csv_data)
-	csv_isbn = csv_data_input(csv_data)
-	csv_isbn2 = csv_isbn.flatten
+	p csv_isbn = csv_data_input(csv_data)
+	p csv_isbn2 = csv_isbn.flatten
 	csv_isbn2
 	csv_validity = []
 	csv_isbn2.each do |isbn|
