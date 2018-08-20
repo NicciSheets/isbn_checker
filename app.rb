@@ -2,18 +2,15 @@ require 'sinatra'
 require 'aws-sdk'
 require 'csv'
 require 'json'
-require 'dotenv'
 require_relative 'isbn_checker_refactor.rb'
 enable :sessions
 
-load 'local_ENV.rb' if File.exist?('local_ENV.rb')
+# load 'local_ENV.rb' if File.exist?('local_ENV.rb')
 
-# s3 = AWS::S3.new(
-#  :access_key_id => AWS["AWS_ACCESS_KEY_ID"],
-#  :secret_access_key => AWS["AWS_SECRET_ACCESS_KEY"]
-#  )
+# s3 = Aws::S3::Client.new(profile: 'm.m.default.2018', region: 'us-east-2')
 
-#BUCKET = arn:aws:s3:::sand.castle
+# s3.put_object(bucket: 'sand.castle', body: validated, key: "valid_check#{count}.csv")
+
 
 get '/' do
 	big_array = big_array
