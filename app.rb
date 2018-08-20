@@ -2,8 +2,7 @@ require 'sinatra'
 require 'aws-sdk'
 require 'csv'
 require 'json'
-require_relative 'isbn_checker.rb'
-require_relative 'csv_checker.rb'
+require_relative 'isbn_checker_refactor.rb'
 enable :sessions
 
 get '/' do
@@ -18,7 +17,7 @@ post '/isbn_checker' do
 	p"isbn params are #{params[:isbn_check]} and isbn is #{isbn}"
 	final_answer = []
 	isbn.each do |isbn|
-		final_answer << which_one(isbn)
+		final_answer << isbn_validation(isbn)
 	end
 	final_answer
 	a = isbn

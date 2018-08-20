@@ -30,7 +30,8 @@ def isbn10_checksum(isbn)
 				counter += 1
 			end
 		end
-		checksum_arr.reduce(:+) % 11
+		checksum_arr
+		p checksum_arr.reduce(:+) % 11
 	end
 end
 
@@ -115,10 +116,6 @@ end
 #p isbn[-1]
 #p isbn10_validation(isbn)
 
-#isbn = "978047005902x"
-#isbn = "97804x7148648"
-#isbn = "9780470059029"
-#isbn = "978-0-13-149505-0"
 
 #p isbn.gsub(/[^0-9]/,'')
 #p isbn13_checksum(isbn)
