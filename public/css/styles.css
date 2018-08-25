@@ -1,7 +1,10 @@
+body {
+	    background-color: mintcream;
+}
+
 .title
 {
   font-family: 'Anton', sans-serif;
-  color: darkkhaki;
   font-size: 3rem;
 }
 
@@ -16,5 +19,5 @@ td {
     border-bottom: 1px solid #ddd;
 }
 
-tr:hover {background-color:#c4c4c4;}
+tr:hover {background-color:#c4c4c4e3;}
 </style>
