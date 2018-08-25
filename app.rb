@@ -1,9 +1,9 @@
 require 'sinatra'
 require 'aws-sdk'
-require 'csv'
+# require 'csv'
 require 'json'
 require_relative 'isbn_checker_refactor.rb'
-require_relative 'local_env.rb'
+# require_relative 'local_env.rb'
 enable :sessions
 
 # load 'local_env.rb' if File.exist?('local_env.rb')
