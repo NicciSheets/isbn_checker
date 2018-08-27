@@ -2,7 +2,6 @@ require 'sinatra'
 require 'aws-sdk'
 require 'csv'
 require_relative 'isbn_checker_refactor.rb'
-require_relative 'local_env.rb'
 require_relative 'csv.rb'
 enable :sessions
 
