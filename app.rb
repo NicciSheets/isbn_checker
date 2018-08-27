@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'aws-sdk'
 require 'csv'
-require 'json'
 require_relative 'isbn_checker_refactor.rb'
 require_relative 'local_env.rb'
 require_relative 'csv.rb'
