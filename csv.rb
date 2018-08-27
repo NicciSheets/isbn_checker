@@ -1,7 +1,7 @@
 require 'csv'
 require_relative 'isbn_checker_refactor.rb'
 
-csv_data = CSV.read('csv_file.csv')
+
 
 def csv_data_input(csv_data)
 	string_data = csv_data.map {|row| row.map {|cell| cell.to_s } }
@@ -32,14 +32,13 @@ def csv_validation(csv_data)
 	big_array = a.zip(b)
 end
 
-header = ["ISBN", "VALIDITY"]
 
-CSV.open("output_csv_isbn.csv", "wb") do |csv|
-	csv << header
-	csv_validation(csv_data).each do |m|
-		csv << m 
-	end
-end 
+
+
+
+
+
+
 
 #headers = csv_data.shift.map {|i| i.to_s }
 # p csv_validation(csv_data)

@@ -4,13 +4,13 @@ require 'csv'
 require 'json'
 require_relative 'isbn_checker_refactor.rb'
 require_relative 'local_env.rb'
+require_relative 'csv.rb'
 enable :sessions
 
 load 'local_env.rb' if File.exist?('local_env.rb')
 
-s3 = Aws::S3::Client.new(:access_key_id => ENV["S3_KEY"],
- :secret_access_key => ENV["S3_SECRET"]
-  )
+s3 = Aws::S3::Client.new(profile: 'NicciSheets', region: 'us-east-2')
+
 
 
 get '/' do
@@ -31,6 +31,17 @@ post '/isbn_checker' do
 	a = isbn
 	b = final_answer
 	big_array = a.zip(b)
+	csv_data = big_array
+	p "csv_data is #{csv_data}"
+	header = ["ISBN", "VALIDITY"]
+	bucket_stuff = CSV.generate do |csv|
+	csv << header
+	csv_data.each do |m|
+		csv << m 
+	end
+	csv
+end
+	s3.put_object(bucket: 'isbn-bucket81', body: bucket_stuff, key: 'output_csv_isbn.csv')
 	erb :checker, locals:{big_array: big_array, final_answer: final_answer, isbn: isbn}
 end
 	
